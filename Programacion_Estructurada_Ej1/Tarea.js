@@ -125,7 +125,9 @@ function setVencimiento(creacion){
     let año = scc(''); //Crea una variable año y usa la función scc para ingresar un valor por consola.
     año = parseInt(año); //Convierte el valor de año a un valor entero.
 
-    let vencimiento = new Date(año, mes - 1, dia); //Crea una variable vencimiento y le asigna la fecha ingresada en formato dd/mm/yyyy.
+    let vencimiento = new Date(año, mes - 1, dia); //Crea una variable vencimiento y le asigna la fecha ingresada en formato dd/mm/yyyy. 
+    
+    //! Se le resta 1 porque en JS los meses empiezan en 0
 
     //Crea un ciclo while para evitar que los datos ingresados por consola sean vacios o que la fecha ingresada sea antes a la de creación.
 

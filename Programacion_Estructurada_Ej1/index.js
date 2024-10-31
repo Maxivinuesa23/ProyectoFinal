@@ -5,6 +5,7 @@ const Print = require ('./Print.js');
 const Pausa =  require ('./Pausa.js');
 const Convertir = require ('./Convertir.js');
 const Search = require ('./Search.js');
+const Editor = require ('./Editor.js');
 
 //Crea el arreglo Tareas en donde se iran insertando las distintas tareas creadas para su futura muestra.
 const Tareas = [];
@@ -35,21 +36,25 @@ do{
                         case 1:
                             console.clear();
                             Print.mostrarTareas(Tareas);
+                            Editor.editar(Tareas);
                             break;
 
                         case 2:
                             console.log("Tareas pendientes. ");
                             Print.mostrarPendientes(Tareas);
+                            Editor.editar(Tareas);
                             break;
 
                         case 3:
                             console.log("Tareas en curso. ");
                             Print.mostrarEnCurso(Tareas);
+                            Editor.editar(Tareas);
                             break;
 
                         case 4:
                             console.log("Tareas terminadas. ");
-                            Print.mostrarTerminadas(Tareas);  
+                            Print.mostrarTerminadas(Tareas);
+                            Editor.editar(Tareas);  
                             break;
 
                         default:
@@ -80,8 +85,7 @@ do{
             //Crea las distintas variables necesarias y llama a las funciones correspondientes para poder ingresar los datos de la tarea.
             let titulo = Tarea.setTitulo();
             let descripcion = Tarea.setDescripcion();
-            let estado = Tarea.setEstado();
-            estado = Convertir.convertirEstado(estado); //Convierte el estado ingresado a un formato mas legible.
+            let estado = Convertir.convertirEstado('P'); //Convierte el estado ingresado a un formato mas legible.
             let creacion = Tarea.setCreacion();
             let vencimiento = Tarea.setVencimiento(creacion);
             let dificultad = Tarea.setDificultad(); 

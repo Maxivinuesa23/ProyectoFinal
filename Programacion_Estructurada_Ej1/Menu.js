@@ -31,5 +31,18 @@ function menuTareas(){
     return opc2;  //Retorna el valor de la variable opc2 para luego poder ser utilizada en el archivo index.js.
 }
 
+function menuModificarTarea(){
+    console.log("Que desea modificar?");
+    console.log("[1] Titulo.");
+    console.log("[2] Descripción.");
+    console.log("[3] Estado.");
+    console.log("[4] Vencimiento.");
+    console.log("[5] Dificultad.");
+    console.log("[0] Salir.");
+    let opcion = scc('');
+    opcion = parseInt(opcion);
+    return opcion;
+}
+
 //Exporta la función menuPrincipal para poder ser utilizada en otros archivos.
-module.exports = {menuPrincipal, menuTareas};
+module.exports = {menuPrincipal, menuTareas, menuModificarTarea};
